@@ -3,10 +3,22 @@
 import { useState } from "react";
 import Link from "next/link";  // 使用Next.js的Link组件
 
-export default function Home() {
-  const [activeSection, setActiveSection] = useState("home"); // 默认显示首页
+// 定义 sections 的类型
+interface Section {
+  home: JSX.Element;
+  dataSecurity: JSX.Element;
+  nodeSecurity: JSX.Element;
+  securityConsensus: JSX.Element;
+  smartContractControl: JSX.Element;
+  situationAwareness: JSX.Element;
+  userManagement: JSX.Element;
+}
 
-  const sections = {
+export default function Home() {
+  const [activeSection, setActiveSection] = useState<keyof Section>("home"); // 显示指定的主页类型
+
+  // 定义 sections 内容
+  const sections: Section = {
     home: (
       <div>
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">欢迎来到后台管理系统</h2>
