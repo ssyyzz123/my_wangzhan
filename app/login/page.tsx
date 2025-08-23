@@ -48,7 +48,13 @@ export default function LoginPage() {
           </div>
           <div>
             <label className="block text-sm text-gray-600">以什么身份登录</label>
-            <select className="w-full mt-2 px-4 py-2 border rounded-xl" value={role} onChange={e=>setRole(e.target.value as any)}>
+            <select
+              className="w-full mt-2 px-4 py-2 border rounded-xl"
+              value={role}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                setRole(e.target.value as Role)   // ✅ 明确断言为 Role
+              }
+            >
               <option value="普通用户">普通用户</option>
               <option value="管理员">管理员</option>
             </select>

@@ -40,7 +40,13 @@ export default function Register() {
           </div>
           <div className="mb-6">
             <label className="block text-sm font-medium text-gray-600">用户类型</label>
-            <select className="mt-2 w-full px-4 py-2 border rounded-xl" value={userType} onChange={e=>setUserType(e.target.value as any)}>
+            <select
+              value={userType}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                setUserType(e.target.value as Role) // ✅
+              }
+              className="mt-2 w-full px-4 py-2 border rounded-xl"
+            >
               <option value="普通用户">普通用户</option>
               <option value="管理员">管理员</option>
             </select>
