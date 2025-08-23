@@ -1,18 +1,17 @@
 'use client';
-
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 // 和你当前首页一致的 Section 类型
 interface Section {
-  home: JSX.Element;
-  dataSecurity: JSX.Element;
-  nodeSecurity: JSX.Element;
-  securityConsensus: JSX.Element;
-  smartContractControl: JSX.Element;
-  situationAwareness: JSX.Element;
-  userManagement: JSX.Element;
+  home: React.ReactNode;
+  dataSecurity: React.ReactNode;
+  nodeSecurity: React.ReactNode;
+  securityConsensus: React.ReactNode;
+  smartContractControl: React.ReactNode;
+  situationAwareness: React.ReactNode;
+  userManagement: React.ReactNode;
 }
 
 export default function AdminPage() {

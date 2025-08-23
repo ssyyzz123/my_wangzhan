@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState } from "react";
+import React from "react";
 
 interface UserSection {
-  home: JSX.Element;
-  profile: JSX.Element;
-  notifications: JSX.Element;
-  security: JSX.Element;
-  support: JSX.Element;
+  home: React.ReactNode;
+  profile: React.ReactNode;
+  notifications: React.ReactNode;
+  security: React.ReactNode;
+  support: React.ReactNode;
 }
 
 export default function UserPage() {
