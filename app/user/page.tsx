@@ -1,13 +1,13 @@
 'use client';
 
-import React from "react";
+import React, { useState } from "react";
 
 interface UserSection {
-  home: React.ReactNode;
-  profile: React.ReactNode;
-  notifications: React.ReactNode;
-  security: React.ReactNode;
-  support: React.ReactNode;
+  home: JSX.Element;
+  profile: JSX.Element;
+  notifications: JSX.Element;
+  security: JSX.Element;
+  support: JSX.Element;
 }
 
 export default function UserPage() {
@@ -37,8 +37,8 @@ export default function UserPage() {
       <div>
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">消息通知</h2>
         <ul className="space-y-3">
-          <li className="p-4 bg-green-100 rounded-lg shadow text-gray-800">📢 系统升级将在今晚 12 点进行</li>
-          <li className="p-4 bg-yellow-100 rounded-lg shadow text-gray-800">⚠️ 检测到新的安全提示，请查看</li>
+          <li className="p-4 bg-green-100 rounded-lg shadow text-gray-800">📢 系统升级将在今晚 12 点进行。</li>
+          <li className="p-4 bg-yellow-100 rounded-lg shadow text-gray-800">⚠️ 检测到新的安全提示，请查看。</li>
         </ul>
       </div>
     ),
@@ -80,9 +80,16 @@ export default function UserPage() {
           <a href="#support" onClick={() => setActiveSection("support")} className="block text-lg hover:text-indigo-300">帮助与支持</a>
         </nav>
         <div className="mt-10">
-          <button className="px-4 py-2 w-full bg-red-500 text-white rounded-lg hover:bg-red-600">
+          <button
+            onClick={() => {
+              localStorage.removeItem("auth");
+              window.location.href = "/login"; // 或者用 router.replace("/login")
+            }}
+            className="px-4 py-2 w-full bg-red-500 text-white rounded-lg hover:bg-red-600"
+          >
             退出登录
           </button>
+
         </div>
       </div>
 
