@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 'use client';
 
 import React, { useEffect, useState } from "react";
@@ -6,14 +8,15 @@ import Link from "next/link";
 
 // 和你当前首页一致的 Section 类型
 interface Section {
-  home: JSX.Element;
-  dataSecurity: JSX.Element;
-  nodeSecurity: JSX.Element;
-  securityConsensus: JSX.Element;
-  smartContractControl: JSX.Element;
-  situationAwareness: JSX.Element;
-  userManagement: JSX.Element;
+  home: ReactNode;
+  dataSecurity: ReactNode;
+  nodeSecurity: ReactNode;
+  securityConsensus: ReactNode;
+  smartContractControl: ReactNode;
+  situationAwareness: ReactNode;
+  userManagement: ReactNode;
 }
+
 
 export default function AdminPage() {
   const router = useRouter();
